@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
+@RestController("/api")
 public class TransactionController {
     @Autowired
     private TransactionService transactionService;
 
-    @GetMapping("/transactions/{accountNumber}")
+    @GetMapping("/v1/transactions/{accountNumber}")
     public List<Transaction> getTransactions(@PathVariable("accountNumber") String accountNumber) {
         return transactionService.findAllByAccountNumber(accountNumber, 10);
     }
