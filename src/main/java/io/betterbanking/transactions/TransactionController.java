@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController("/api")
+@RestController
 @RequestMapping(path = "/api", produces = "application/json")
 public class TransactionController {
     @Autowired
@@ -16,6 +16,6 @@ public class TransactionController {
 
     @GetMapping("/v1/transactions/{accountNumber}")
     public List<Transaction> getTransactions(@PathVariable("accountNumber") String accountNumber) {
-        return transactionService.findAllByAccountNumber(accountNumber, 10);
+        return transactionService.findAllByAccountNumber(accountNumber);
     }
 }
