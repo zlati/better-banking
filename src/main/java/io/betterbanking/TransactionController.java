@@ -1,5 +1,7 @@
-package io.betterbanking.transactions;
+package io.betterbanking;
 
+import io.betterbanking.transactions.Transaction;
+import io.betterbanking.transactions.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
